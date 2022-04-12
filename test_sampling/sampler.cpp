@@ -5,12 +5,12 @@
 #include <cstdlib>
 #include <stdexcept>
 #include <vector>
+#include <chrono>
 #include <boost/random.hpp>
 #include "Eigen/Eigen"
 #include "cartesian_geom/cartesian_kernel.h"
 #include "generators/boost_random_number_generator.hpp"
 #include "convex_bodies/spectrahedra/spectrahedron.h"
-#include "chrono"
 
 typedef Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic> MT;
 typedef Eigen::Matrix<double, Eigen::Dynamic, 1> VT;
@@ -23,9 +23,14 @@ typedef BoostRandomNumberGenerator<boost::mt19937, double> RNGType;
 // typedef BilliardWalk::template Walk<spectrahedron, RNGType> BilliardWalkType;
 // typedef AcceleratedBilliardWalk::template Walk<spectrahedron, RNGType> AcceleratedBilliardWalkType;
 
+// Assume that A is already symmetric
 bool isPosSemidefinite(MT A){
-    Eigen::LLT<MT> A_llt(A);
-    if(A_llt.info() != Eigen::NumericalIssue) return true;
+    // Eigen::LLT<MT> A_llt(A);
+    // if(A_llt.info() != Eigen::NumericalIssue) return true;
+    // return false;
+    Eigen::LDLT<MT> A_ldlt(A);
+    if (A_ldlt.info() != Eigen::NumericalIssue && A_ldlt.isPositive())
+        return true;
     return false;
 }
 
