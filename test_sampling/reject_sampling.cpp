@@ -46,7 +46,7 @@ MT AcceptReject(int n, int * c){
     }
 }
 
-std::pair<int, double> testRejectSampling(int n, int num_matrices = 1000){
+std::pair<int, double> testRejectSampling(int n, int num_matrices = 100){
     int numtrials = 0, c = 0;
     std::pair<int, double> ptest;
     auto start = std::chrono::steady_clock::now();
@@ -64,6 +64,6 @@ std::pair<int, double> testRejectSampling(int n, int num_matrices = 1000){
 }
 
 int main(){
-    testRejectSampling(5);
+    testRejectSampling(7);
     return 0;
 }
