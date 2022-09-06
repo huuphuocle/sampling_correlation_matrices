@@ -194,7 +194,7 @@ Ball Walk is already implemented in `volesti`. To use this implementation with `
 * Generating a random direction (see `GetDirection` functions in `include/sampling/sphere.hpp`).<br>
 New `GetDirection` functions are added to return a direction in matrix form.
 * Checking the positive semi-definiteness of a generated matrix.<br>
-Here, the membership oracle `is_in` of `Spectrahedron` class and its subclasses is used intensively. As explained above, the old implementation of `is_in` is replaced by ` `. The table below illustrates the speed-up using this new `is_in` method.
+Here, the membership oracle `is_in` of `Spectrahedron` class and its subclasses is used intensively. As explained above, the old implementation of `is_in` is replaced by `Eigen::LDLT`. The table below illustrates the speed-up using this new `is_in` method.
 
 <center>
 
