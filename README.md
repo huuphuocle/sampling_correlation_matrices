@@ -106,7 +106,7 @@ gaussian_correlation_sampling_MT<GaussianReHMCWalk, CorreMatrix<double>, RNGType
 The main operations for sampling correlation matrices are the oracles:
 
 * **membership** tests whether the current point lies in the
-* **intersection** computes the intersection of $\bm{x} + t \cdot \bm{v}$ and the boundary of $K$
+* **intersection** computes the intersection of $x + t \cdot v$ and the boundary of $K$
 * **reflection** computes the direction of reflection.
 
 ## CorrelationSpectrahedron
@@ -146,7 +146,8 @@ I changed this to `Eigen::LDLT` that computes `A`'s Cholesky decomposition when 
 * **Intersection:** The intersection oracle needs to solve a generalized eigenvalue problem for symmetric matrices. This principle is not changed but by experiments, I found that `Eigen::GeneralizedSelfAdjointEigenSolver` is faster than the currently in-use `Spectra::SymGEigsSolver`.<br><br>
 Hence, I added a function `minPosLinearEigenvalue_EigenSymSolver` which is used by the intersection oracles in `CorrelationSpectrahedron` and `CorrelationSpectrahedron_MT` classes.
 
-* **Reflection:** In the project proposal, we explained a formula for the normal vector at the reflection point that helps compute the reflection direction. However, each matrix $A_{i,j}$ in the linear matrix inequality of $K$ has only two non-zero entries $a_{i,j} = a_{j,i} = 1$. Substituting these matrices in the normal vector formula gives a much simpler formula: $$ n_{normal} \propto (e_2e_1,e_3e_2,e_3e_1,\ldots)$$
+* **Reflection:** In the project proposal, we explained a formula for the normal vector at the reflection point that helps compute the reflection direction. However, each matrix $A_{i,j}$ in the linear matrix inequality of $K$ has only two non-zero entries $a_{i,j} = a_{j,i} = 1$. Substituting these matrices in the normal vector formula gives a much simpler formula:
+$$ n_{normal} \propto (e_2e_1,e_3e_2,e_3e_1,\ldots)$$
 where $e = (e_1,\ldots,e_n)$ is an eigenvector obtained from **intersection** oracle. <br>
 Using this formula is much faster than the naive one and helps improve the performance of random walks which intensively use reflections, e.g., `BilliardWalk` or `ReHMCWalk`.
 
