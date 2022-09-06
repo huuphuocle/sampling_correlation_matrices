@@ -4,7 +4,7 @@
 ### **Mentors:** &emsp; &emsp; &nbsp; Apostolos Chalkis, Elias Tsigaridas, Vissarion Fisikopoulos (GeomScale)
 <br>
 
-**This repository serves only as a summary for my work. All the codes produced during the coding phase are given in the links right below!**
+**<span style="color:red">This repository serves only as a summary for my work. All the codes produced during the coding phase are given in the links right below!</span>**
 
 **Project proposal:** [https://www-polsys.lip6.fr/~phuoc/includes/gsoc22.pdf](https://www-polsys.lip6.fr/~phuoc/includes/gsoc22.pdf)
 * Pull request 1: [https://github.com/GeomScale/volesti/pull/233](https://github.com/GeomScale/volesti/pull/233) <br>
