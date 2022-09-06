@@ -126,7 +126,7 @@ These new aspects are detailed below in **Geometric oracles** section.
 ## CorrelationSpectrahedron_MT
 
 This class serves for the same purposes of `CorrelationSpectrahedron` class. The main difference is that it uses a new PointType class `CorreMatrix` which stores a matrix in its attribute `mat`. This helps avoid switching between matrices and vectors of coefficients during computation. The implementation of this class includes the following:
-* `CorreMatrix` class with basic operators (`+`,`-`,`*`,`/`,`+=`,`-=`,$\ldots$).
+* `CorreMatrix` class with basic operators (`+`,`-`,`*`,`/`,`+=`,`-=`, $\ldots$).
 * `CorrelationSpectrahedron_MT` class with member functions modified to use `CorreMatrix` as PointType
 * New `GetDirection` functions in `include/sampling/sphere.hpp` for `CorreMatrix` that returns a direction stored in matrix form.
 
@@ -147,7 +147,7 @@ I changed this to `Eigen::LDLT` that computes `A`'s Cholesky decomposition when 
 Hence, I added a function `minPosLinearEigenvalue_EigenSymSolver` which is used by the intersection oracles in `CorrelationSpectrahedron` and `CorrelationSpectrahedron_MT` classes.
 
 * **Reflection:** In the project proposal, we explained a formula for the normal vector at the reflection point that helps compute the reflection direction. However, each matrix $A_{i,j}$ in the linear matrix inequality of $K$ has only two non-zero entries $a_{i,j} = a_{j,i} = 1$. Substituting these matrices in the normal vector formula gives a much simpler formula:
-$$n_{normal} \propto (e_2e_1,e_3e_2,e_3e_1,...)$$
+$$n_{normal} \propto (e_2e_1,e_3e_2,e_3e_1,\ldots)$$
 where $e = (e_1,\ldots,e_n)$ is an eigenvector obtained from **intersection** oracle. <br>
 Using this formula is much faster than the naive one and helps improve the performance of random walks which intensively use reflections, e.g., `BilliardWalk` or `ReHMCWalk`.
 
