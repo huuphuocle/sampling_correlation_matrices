@@ -69,7 +69,7 @@ where $a \in \mathbb{R}$
 **Exponential sampling**
 
 For a distribution of density proportional with
-$$ \exp(- \langle c, x \rangle/T)$$
+$$\exp(- \langle c, x \rangle/T)$$
 where $c \in \mathbb{R}^d$ and $T \in \mathbb{R}$
 
 * `exponential_correlation_sampling<WalkType, Point, RNGType>(n, randPoints, walkL, num_points, c, T, nburns)`
