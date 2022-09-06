@@ -8,10 +8,10 @@
 
 **Project proposal:** [https://www-polsys.lip6.fr/~phuoc/includes/gsoc22.pdf](https://www-polsys.lip6.fr/~phuoc/includes/gsoc22.pdf)
 * Pull request 1: [https://github.com/GeomScale/volesti/pull/233](https://github.com/GeomScale/volesti/pull/233) <br>
-[https://github.com/huuphuocle/volesti/tree/feature/sampling_correlation_matrices](https://github.com/huuphuocle/volesti/tree/feature/sampling_correlation_matrices)
+Branch: [https://github.com/huuphuocle/volesti/tree/feature/sampling_correlation_matrices](https://github.com/huuphuocle/volesti/tree/feature/sampling_correlation_matrices)
 
 * Pull request 2: [https://github.com/GeomScale/volesti/pull/240](https://github.com/GeomScale/volesti/pull/240)<br>
-[https://github.com/huuphuocle/volesti/tree/feature/ReHMCWalk](https://github.com/huuphuocle/volesti/tree/feature/ReHMCWalk)
+Branch: [https://github.com/huuphuocle/volesti/tree/feature/ReHMCWalk](https://github.com/huuphuocle/volesti/tree/feature/ReHMCWalk)
 
 **Notations**
 * $A$: a correlation matrix with size $n \times n$
