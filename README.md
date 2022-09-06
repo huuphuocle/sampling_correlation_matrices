@@ -147,7 +147,7 @@ I changed this to `Eigen::LDLT` that computes `A`'s Cholesky decomposition when 
 Hence, I added a function `minPosLinearEigenvalue_EigenSymSolver` which is used by the intersection oracles in `CorrelationSpectrahedron` and `CorrelationSpectrahedron_MT` classes.
 
 * **Reflection:** In the project proposal, we explained a formula for the normal vector at the reflection point that helps compute the reflection direction. However, each matrix $A_{i,j}$ in the linear matrix inequality of $K$ has only two non-zero entries $a_{i,j} = a_{j,i} = 1$. Substituting these matrices in the normal vector formula gives a much simpler formula:
-$$ n_{normal} \propto (e_2e_1,e_3e_2,e_3e_1,\ldots)$$
+$$n_{normal} \propto (e_2e_1,e_3e_2,e_3e_1,...)$$
 where $e = (e_1,\ldots,e_n)$ is an eigenvector obtained from **intersection** oracle. <br>
 Using this formula is much faster than the naive one and helps improve the performance of random walks which intensively use reflections, e.g., `BilliardWalk` or `ReHMCWalk`.
 
