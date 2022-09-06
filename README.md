@@ -60,7 +60,7 @@ I added several functions in `include/sampling/sample_correlation_matrices.hpp` 
 
 **Gaussian sampling:**
 For a distribution of density proportional with
-$$ \exp(-a \langle x, x \rangle)$$
+$$\exp(-a \langle x, x \rangle)$$
 where $a \in \mathbb{R}$
 
 * `gaussian_correlation_sampling<WalkType, Point, RNGType>(n, randPoints, walkL, num_points, a, nburns)`
