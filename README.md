@@ -316,6 +316,7 @@ However, we also need to consider the mixing time, i.e., the number of steps to 
 ## V - Further plan
 
 A possible follow-up after the final submission of Google Summer of Code 2022 consists of:
+* Reimplement **membership** and **intersection** oracles in `Spectrahedron` (e.g. using `Eigen::LDLT`)
 * Comparing with other software for generating correlation matrices
 * A general implementation of ReHMC walk that is templated by a functor `f(x)`
 * Further optimization of member functions of `CorrelationSpectrahedron_MT` and `CorreMatrix` classes
