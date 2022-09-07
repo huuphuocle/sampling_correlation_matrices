@@ -224,12 +224,12 @@ Timings (in milliseconds) for Ball Walk to sample $100000$ $n\times n$ correlati
 
 <figure align="center">
     <img src="img/ball.png" />
-    <figcaption>Fig.1 - 3000 uniform samples by Ball Walk with walk length 1.
+    <figcaption>Fig.1 - 3000 uniform samples by Ball Walk with walk length 1.</figcaption>
 </figure>
 
 <figure align="center">
     <img src="img/ball.png" />
-    <figcaption>Fig.2 - 3000 uniform samples by Ball Walk with walk length 5.
+    <figcaption>Fig.2 - 3000 uniform samples by Ball Walk with walk length 5.</figcaption>
 </figure>
 
 In Fig.1, we use Ball Walk with walk length 1 which results in a sample set where many samples coincide.
@@ -268,7 +268,7 @@ Timings (in milliseconds) for RDHR Walk to sample $10000$ $n\times n$ correlatio
 
 <figure align="center">
     <img src="img/rdhr.png" />
-    <figcaption>Fig.3 - 3000 uniform samples by Hit-and-Run Walk with walk length 1.
+    <figcaption>Fig.3 - 3000 uniform samples by Hit-and-Run Walk with walk length 1.</figcaption>
 </figure>
 
 ### **Billiard Walk algorithm**
@@ -296,21 +296,19 @@ Timings (in milliseconds) for Billiard Walk to sample $1000$ $n\times n$ correla
 
 <figure align="center">
     <img src="img/billiard.png" />
-    <figcaption>Fig.3 - 3000 uniform samples by Billiard Walk with walk length 1.
+    <figcaption>Fig.3 - 3000 uniform samples by Billiard Walk with walk length 1.</figcaption>
 </figure>
 
 ### **ReHMC Walk algorithm**
 
 <figure align="center">
-    <img src="img/gaussianReHMC.png" />
-    <figcaption>Fig.4 - 3000 Gaussian samples by ReHMC Walk with walk length 1.
-    </figcaption>
+    <img src="img/gaussian.png" />
+    <figcaption>Fig.4 - 3000 Gaussian (a = 5) samples by ReHMC Walk with walk length 1.</figcaption>
 </figure>
 
 <figure align="center">
-    <img src="img/exponentialReHMC.png" />
-    <figcaption>Fig.5 - 3000 exponential samples by ReHMC Walk with walk length 1.
-    </figcaption>
+    <img src="img/exponential.png" />
+    <figcaption>Fig.5 - 3000 exponential (c = (1,1,1), T = 2) samples by ReHMC Walk with walk length 1.</figcaption>
 </figure>
 
 ## Synthesis of experiments
