@@ -224,8 +224,16 @@ Timings (in milliseconds) for Ball Walk to sample $100000$ $n\times n$ correlati
 
 <figure align="center">
     <img src="img/ball.png" />
-    <figcaption>Fig.1 - 3000 uniform samples by Ball Walk.
+    <figcaption>Fig.1 - 3000 uniform samples by Ball Walk with walk length 1.
 </figure>
+
+<figure align="center">
+    <img src="img/ball.png" />
+    <figcaption>Fig.2 - 3000 uniform samples by Ball Walk with walk length 5.
+</figure>
+
+In Fig.1, we use Ball Walk with walk length 1 which results in a sample set where many samples coincide.
+The walk length is increased to 5 in Fig.2 (15000 actually generated), which provides better samples.
 
 ### **RDHR Walk algorithm**
 
@@ -260,7 +268,7 @@ Timings (in milliseconds) for RDHR Walk to sample $10000$ $n\times n$ correlatio
 
 <figure align="center">
     <img src="img/rdhr.png" />
-    <figcaption>Fig.2 - 3000 uniform samples by Hit-and-Run Walk.
+    <figcaption>Fig.3 - 3000 uniform samples by Hit-and-Run Walk with walk length 1.
 </figure>
 
 ### **Billiard Walk algorithm**
@@ -288,20 +296,20 @@ Timings (in milliseconds) for Billiard Walk to sample $1000$ $n\times n$ correla
 
 <figure align="center">
     <img src="img/billiard.png" />
-    <figcaption>Fig.3 - 3000 uniform samples by Billiard Walk.
+    <figcaption>Fig.3 - 3000 uniform samples by Billiard Walk with walk length 1.
 </figure>
 
 ### **ReHMC Walk algorithm**
 
 <figure align="center">
     <img src="img/gaussianReHMC.png" />
-    <figcaption>Fig.4 - 3000 Gaussian samples by ReHMC Walk.
+    <figcaption>Fig.4 - 3000 Gaussian samples by ReHMC Walk with walk length 1.
     </figcaption>
 </figure>
 
 <figure align="center">
     <img src="img/exponentialReHMC.png" />
-    <figcaption>Fig.5 - 3000 exponential samples by ReHMC Walk.
+    <figcaption>Fig.5 - 3000 exponential samples by ReHMC Walk with walk length 1.
     </figcaption>
 </figure>
 
