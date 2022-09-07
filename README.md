@@ -223,7 +223,7 @@ Timings (in milliseconds) for Ball Walk to sample $100000$ $n\times n$ correlati
 </center>
 
 <figure align="center">
-    <img src="img/ballwalk.png" />
+    <img src="img/ball.png" />
     <figcaption>Fig.1 - 3000 uniform samples by Ball Walk.
 </figure>
 
@@ -259,7 +259,7 @@ Timings (in milliseconds) for RDHR Walk to sample $10000$ $n\times n$ correlatio
 </center>
 
 <figure align="center">
-    <img src="img/rdhrwalk.png" />
+    <img src="img/rdhr.png" />
     <figcaption>Fig.2 - 3000 uniform samples by Hit-and-Run Walk.
 </figure>
 
@@ -287,7 +287,7 @@ Timings (in milliseconds) for Billiard Walk to sample $1000$ $n\times n$ correla
 </center>
 
 <figure align="center">
-    <img src="img/billiardwalk.png" />
+    <img src="img/billiard.png" />
     <figcaption>Fig.3 - 3000 uniform samples by Billiard Walk.
 </figure>
 
