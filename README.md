@@ -228,7 +228,7 @@ Timings (in milliseconds) for Ball Walk to sample $100000$ $n\times n$ correlati
 </figure>
 
 <figure align="center">
-    <img src="img/ball.png" width="600"/>
+    <img src="img/ball_walkL5.png" width="600"/>
     <figcaption>Fig.2 - 3000 uniform samples by Ball Walk with walk length 5.</figcaption>
 </figure>
 
