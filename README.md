@@ -340,3 +340,13 @@ doctest.h:4189:47: error: size of array 'altStackMem' is not an integral constan
  ```
 
 This comes from `doctest.h` v1.2.9 being used in `test/`. A proposed fix is to use `doctest.h` v2.4.8 found at [https://github.com/doctest/doctest/blob/v2.4.8/doctest/doctest.h](https://github.com/doctest/doctest/blob/v2.4.8/doctest/doctest.h).
+
+### Different results of `compute_reflection` of `CorrelationSpectrahedron` and `CorrelationSpectrahedron_MT`
+
+Logically, starting from the origin point, running Billiard Walk for the two new classes should results into the same set of samples (if the random seed is fixed). In my implementation, this is unfortunately not the case. The problem comes from the member function `compute_reflection`.
+* In `CorrelationSpectrahedron`, there is a dot product computed by `Eigen` built-in `dot`.
+* In `CorrelationSpectrahedron_MT`, I need to write a `dot` operator for `CorreMatrix` (in a naive way).
+Even though using any of them gives a set of samples that pass all the tests, which means:
+* All the samples lie correctly in the spectrahedron,
+* The PSRF is smaller than 1.1,
+but in some experiments, I found that the numerical values output by these two `dot` functions have a small (`0.00001`) difference. I do not want to replace the use of `Eigen`'s `dot` by a naive implementation (which will solve the problem) as `Eigen`'s `dot` is more efficient.
