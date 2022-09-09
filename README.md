@@ -189,6 +189,8 @@ that uses the general `Spectrahedron` class (and the LMI formed by $A_{i,j}$) to
 
 First, I will explain in details the speed-up for Ball Walk, RDHR Walk and Billiard Walk. These random walks already exist in `volesti` but the new operations in `CorrelationSpectrahedron` and `CorrelationSpectrahedron_MT` bring better performance.
 
+The images below represent $3 \times 3$ correlation matrices plotted in $\mathbb{R}^3$ with their three "independent" coefficients.
+
 ### **Ball Walk algorithm**
 Ball Walk is already implemented in `volesti`. To use this implementation with `CorrelationSpectrahedron` and `CorrelationSpectrahedron_MT`, we needed to change . Ball Walk algorithm depends mainly on two operations:
 * Generating a random direction (see `GetDirection` functions in `include/sampling/sphere.hpp`).<br>
@@ -303,10 +305,18 @@ Timings (in milliseconds) for Billiard Walk to sample $1000$ $n\times n$ correla
 
 The two ReHMC Walks are added in my second pull request. Some generated samples are plotted below.
 
+In Fig. 5, I sampled $3000$ correlation matrices from a density $\exp(-5\|x\|^2)$ over $\mathbb{R}^3$, truncated to $K$. The samples concentrate around the coordinate origin $(0,0,0)$ (the mode of the distribution).
+
 <figure align="center">
     <img src="img/gaussian.png" width="600"/>
     <figcaption>Fig.5 - 3000 Gaussian (a = 5) samples by ReHMC Walk with walk length 1.</figcaption>
 </figure>
+
+In Fig.6, I sampled $3000$ correlation matrices from a density $\exp((-x_1-x_2-x_3)/2)$ truncated in $K$. The exponential density $\rho$ should be
+$$\rho = \left\{\begin{array}{cc}\exp(-(x_1+x_2+x_3)/2) & \text{for }x_i \ge -1\\ 0 & \text{otherwise}.\end{array}\right.$$
+However, as the point will never get out of the cube $[-1,1]^3$, we simply consider $\rho$ in the first case.
+
+We expected that the samples concentrate around the mode $(-1,-1,-1)$ (a corner of $K$) which seems not to be the case in Fig.6. This remains to be understood.
 
 <figure align="center">
     <img src="img/exponential.png" width="600"/>
@@ -320,6 +330,8 @@ For Ball Walk, RDHR Walk and Billiard Walk, the new classes provide good perform
 From the tables of timing above, we see that each step of Ball Walk and RDHR Walk is faster than Billiard Walk (which is obvious since each step of Billiard Walk is more sophisticated).
 
 However, we also need to consider the mixing time, i.e., the number of steps to achieve the convergence of Markov random walks. This mixing time can be measured by PSRF which, by experiments, is much smaller for Billiard Walk. For instance, in high dimension, e.g., $n = 100$, we cannot obtain PSRF < 1.1 by Ball Walk or RDHR Walk even with $10000$ points while Billiard Walk reaches this PSRF with only $1000$ points.
+
+At the stage of writing this summary, the pull request of my implementation of ReHMC Walk is under review. As explained above, the experiments of Gaussian ReHMC Walk give reasonable results. However, the Exponential ReHMC Walk still needs to be verified.
 
 ## V - Further plan
 
