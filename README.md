@@ -14,7 +14,7 @@ Branch: [https://github.com/huuphuocle/volesti/tree/feature/sampling_correlation
 Branch: [https://github.com/huuphuocle/volesti/tree/feature/ReHMCWalk](https://github.com/huuphuocle/volesti/tree/feature/ReHMCWalk)
 
 **Notations**
-* $A$: a correlation matrix with size $n \times n$
+* $A$: a correlation matrix of size $n \times n$
 * $A_{i,j}$: a matrix in the linear matrix inequality of $K$ where $a_{i,j} = a_{j,i} = 1$ and $0$ elsewhere
 * $K$: the spectrahedron associated to the set of $n\times n$ correlation matrices
 * `VT`: Vector Type `Eigen::Matrix<NT, Eigen::Dynamic, 1>`
@@ -192,7 +192,7 @@ First, I will explain in details the speed-up for Ball Walk, RDHR Walk and Billi
 The images below represent $3 \times 3$ correlation matrices plotted in $\mathbb{R}^3$ with their three "independent" coefficients.
 
 ### **Ball Walk algorithm**
-Ball Walk is already implemented in `volesti`. To use this implementation with `CorrelationSpectrahedron` and `CorrelationSpectrahedron_MT`, we needed to change . Ball Walk algorithm depends mainly on two operations:
+Ball Walk is already implemented in `volesti`. Ball Walk algorithm depends mainly on two operations:
 * Generating a random direction (see `GetDirection` functions in `include/sampling/sphere.hpp`).<br>
 New `GetDirection` functions are added to return a direction in matrix form.
 * Checking the positive semi-definiteness of a generated matrix.<br>
